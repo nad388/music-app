@@ -5,13 +5,13 @@
 .input {
 	width: 300px;
 	margin: 10px 150px;
-
-	& > * {
-		text-align: center !important;
-		color: #9e9e9e;
-		padding: 14px;
-		font-size: 18px !important;
-	}
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid white;
+	color: #9e9e9e;
+	text-align: center !important;
+	padding: 14px;
+	font-size: 18px !important;
 }
 
 .list {
@@ -25,4 +25,7 @@
 	padding: 15px;
 	border: 1px solid #b8b4b4;
 	border-radius: 20px;
+}
+.css-q0jhri-MuiInputBase-root-MuiInput-root {
+	color: white;
 }

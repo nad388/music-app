@@ -33,3 +33,9 @@
 .playing * {
 	color: #9340fe !important;
 }
+
+.hoverIcon:hover {
+	background-color: rgb(43, 38, 38);
+	border-radius: 50%;
+	transition: all 0.5s ease-in-out;
+}

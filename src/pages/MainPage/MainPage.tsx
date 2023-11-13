@@ -1,4 +1,3 @@
-import { Input } from '@mui/material'
 import { ChangeEvent, FC, useState } from 'react'
 import tracksList from '../../assets/tracksList'
 import TrackItem from '../../components/TrackList/TrackItem'
@@ -24,7 +23,7 @@ const MainPage: FC = () => {
 	}
 	return (
 		<div className={styles.search}>
-			<Input
+			<input
 				className={styles.input}
 				placeholder='Search tracks'
 				onChange={handleChange}

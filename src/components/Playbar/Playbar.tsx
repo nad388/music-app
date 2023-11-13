@@ -1,6 +1,6 @@
-import { Pause, PlayArrow } from '@mui/icons-material'
 import { IconButton, Slider } from '@mui/material'
 import { useContext, useEffect, useState } from 'react'
+import { BsFillPlayFill, BsPauseFill } from 'react-icons/bs'
 import { AudioContext } from '../../context/AudioContext'
 import secondsToMMSS from '../../utils/secondsToMMSS'
 import styles from './Playbar.module.scss'
@@ -59,7 +59,7 @@ const Playbar = () => {
 		<div className={styles.playbar}>
 			<img className={styles.preview} src={preview} alt='' />
 			<IconButton onClick={() => handleToggleAudio(currentTrack)}>
-				{isPlaying ? <Pause /> : <PlayArrow />}
+				{isPlaying ? <BsPauseFill /> : <BsFillPlayFill />}
 			</IconButton>
 			<div className={styles.credits}>
 				<h4>{title}</h4>

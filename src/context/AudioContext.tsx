@@ -1,11 +1,18 @@
-import { PropsWithChildren, createContext, useState } from 'react'
+import { Context, PropsWithChildren, createContext, useState } from 'react'
 import tracksList from '../assets/tracksList'
 import { ITrack } from '../types/types'
 
+interface IAudioContext {
+	audio: HTMLAudioElement
+	currentTrack: ITrack
+	isPlaying: boolean
+	handleToggleAudio: (track: ITrack) => void
+}
+
 const audio = new Audio()
 
-export const AudioContext = createContext({})
-const AudioProvider = ({ children }: PropsWithChildren) => {
+export const AudioContext:Context<IAudioContext> = createContext({} as IAudioContext)
+const AudioProvider = ({ children }: PropsWithChildren<{}>) => {
 	const [currentTrack, setCurrentTrack] = useState(tracksList[0])
 	const [isPlaying, setIsPlaying] = useState(false)
 

@@ -1,14 +1,14 @@
-import { Pause, PlayArrow } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
 import cn from 'classnames'
 import { FC, useContext } from 'react'
+import { BsFillPlayFill, BsPauseFill } from 'react-icons/bs'
 import { AudioContext } from '../../context/AudioContext'
 import { ITrack } from '../../types/types'
 import secondsToMMSS from '../../utils/secondsToMMSS'
 import styles from './TrackList.module.scss'
 
 const TrackItem: FC<ITrack> = track => {
-	const { id, src, preview, title, artists, duration } = track
+	const { preview, title, artists, duration } = track
 	const { handleToggleAudio, currentTrack, isPlaying } =
 		useContext(AudioContext)
 	const isCurrentTrack = currentTrack.id === track.id
@@ -17,7 +17,11 @@ const TrackItem: FC<ITrack> = track => {
 	return (
 		<div className={cn(styles.track, isCurrentTrack && styles.playing)}>
 			<IconButton onClick={() => handleToggleAudio(track)}>
-				{isCurrentTrack && isPlaying ? <Pause /> : <PlayArrow />}
+				{isCurrentTrack && isPlaying ? (
+					<BsPauseFill />
+				) : (
+					<BsFillPlayFill color='white' className={styles.hoverIcon} />
+				)}
 			</IconButton>
 			<img className={styles.preview} src={preview} alt='' />
 			<div className={styles.credits}>
